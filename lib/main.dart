@@ -4,6 +4,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
+import 'package:open_file/open_file.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,21 +30,61 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  Future<List> PegarApks() async {
+    final Uri uri = Uri.parse(
+        'https://raw.githubusercontent.com/MateuzDuart/grupoMxrApp/master/dados.json');
+    final resposta = await http.get(uri);
+    var dados = json.decode(resposta.body) as List;
+
+    List aplicativos = [];
+
+    dados.forEach((dadosApk) {
+      Aplicativo aplicativo =
+          Aplicativo(dadosApk['logo'], dadosApk['apk'], dadosApk['nome']);
+      aplicativos.add(aplicativo);
+    });
+
+    return aplicativos;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.title, style: TextStyle(color: Colors.white)),
+          title:
+              Text(widget.title, style: const TextStyle(color: Colors.white)),
           backgroundColor: Color.fromARGB(255, 65, 65, 65),
         ),
-        body: ListView(
-          padding: EdgeInsets.only(top: 32),
-          children: [Aplicativo()],
+        body: FutureBuilder(
+          future: PegarApks(),
+          builder: (context, AsyncSnapshot snapshot) {
+            if (snapshot.data == null) {
+              return Text('Carregando...');
+            } else {}
+
+            return ListView.builder(
+              padding: EdgeInsets.only(
+                top: 32,
+              ),
+              itemCount: snapshot.data.length,
+              itemBuilder: (context, indice) {
+                return Aplicativo(
+                    snapshot.data[indice].logo,
+                    snapshot.data[indice].apk,
+                    'snapshot.data[indice].nome.apk');
+              },
+            );
+          },
         ));
   }
 }
 
 class Aplicativo extends StatefulWidget {
+  final logo;
+  final apk;
+  final nome;
+  const Aplicativo(this.logo, this.apk, this.nome);
+
   @override
   State<Aplicativo> createState() => _AplicativoState();
 }
@@ -55,9 +96,9 @@ class _AplicativoState extends State<Aplicativo> {
     final tamanho = totalBytes! / 1000 / 1000;
     final bytesReceived = StreamController();
     var dir = await getExternalStorageDirectory();
-    File file = File("${dir!.path}/$fileName");
+    File file = File("/storage/emulated/0/Download/$fileName");
     await file.writeAsBytes(response.bodyBytes);
-
+    await OpenFile.open("/storage/emulated/0/Download/$fileName");
     final request = http.Request('GET', Uri.parse(url));
     final streamedResponse = await request.send();
 
@@ -80,23 +121,30 @@ class _AplicativoState extends State<Aplicativo> {
     return Container(
       child: Column(children: [
         InkWell(
-            onTap: () {
-              downloadFile(
-                  'https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/Acesso_PDV_4.0.4.apk',
-                  'fileName.apk');
-            }, // Handle your callback
-            child: Ink(
+          onTap: () {
+            downloadFile(
+                'https://raw.githubusercontent.com/MateuzDuart/grupoMxrApp/master/apks/Acesso_PDV_4.0.4.apk',
+                widget.nome);
+          }, // Handle your callback
+          child: Ink(
               height: 200,
               width: MediaQuery.of(context).size.width * 0.6,
               color: Colors.red,
-              child: Image.network(
-                  'https://involusite.tk/Imagens/logo-involusite-simplificada.png'),
-            )),
-        Padding(
-          padding: EdgeInsets.only(top: 16),
+              child: Image.network(widget.logo,
+                  errorBuilder: (BuildContext context, Object exception,
+                          StackTrace? stackTrace) =>
+                      Text('Erro ao Carregar Imagem'))),
         ),
-        Text('bla bla bla bla bla bla',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600))
+        Padding(
+          padding: EdgeInsets.only(top: 8),
+        ),
+        Text(
+          widget.nome,
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+        ),
+        Padding(
+          padding: EdgeInsets.only(bottom: 40),
+        ),
       ]),
     );
   }
