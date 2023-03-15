@@ -113,7 +113,6 @@ class _AplicativoState extends State<Aplicativo> {
   await OpenFile.open(filePath);
 }
 
-
   @override
   Widget build(BuildContext context) {
     return Container(
