@@ -1,166 +1,203 @@
 [
     {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/Acesso-PDV.jpg",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/Acesso_PDV_4.0.4.apk",
-        "nome" : "Acesso_PDV_4.0.4.apk"
+        "nomeApk" : "Acesso_PDV_4.0.4.apk",
+        "nome" : "Acesso PDV v4.0.4"
     },
     {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/Apostador-V3.jpg",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/Apostador_v3_1.82.apk",
-        "nome" : "Apostador_v3_1.82.apk"
+        "nomeApk" : "Apostador_v3_1.82.apk",
+        "nome" : "Apostador V3 v1.82"
     },
     {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/app.apk",
-        "nome" : "app.apk"
+        "nomeApk" : "app.apk",
+        "nome" : "Gol da virada bet"
     },
     {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/Band_0.0.1.apk",
-        "nome" : "Band_0.0.1.apk"
+        "nomeApk" : "Band_0.0.1.apk",
+        "nome" : "Band v0.0.1"
     },{
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/Bet_loteria_2.2.apk",
-        "nome" : "Bet_loteria_2.2.apk"
+        "nomeApk" : "Bet_loteria_2.2.apk",
+        "nome" : "Bet loteria v2.2"
     },
     {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/bicho-certo.webp",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/Bicho_Certo_1.4.6.apk",
-        "nome" : "Bicho_Certo_1.4.6.apk"
+        "nomeApk" : "Bicho_Certo_1.4.6.apk",
+        "nome" : "Bicho Certo v1.4.6"
     },{
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/bingo-b7.jpg",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/Bingo_6.0.apk",
-        "nome" : "Bingo_6.0.apk"
+        "nomeApk" : "Bingo_6.0.apk",
+        "nome" : "Bingo v6.0"
     },
     {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/Chrome.jpg",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/Chrome.apk",
-        "nome" : "Chrome.apk"
+        "nomeApk" : "Chrome.apk",
+        "nome" : "Chrome"
     },{
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/Ciaa_1.0.7.apk",
-        "nome" : "Ciaa_1.0.7.apk"
+        "nomeApk" : "Ciaa_1.0.7.apk",
+        "nome" : "Ciaa v1.0.7"
     },
     {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/clube-da-bola.jpg",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/Clube_da_Bola_1.0.0.apk",
-        "nome" : "Clube_da_Bola_1.0.0.apk"
+        "nomeApk" : "Clube_da_Bola_1.0.0.apk",
+        "nome" : "Clube da Bola v1.0.0"
     },{
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/com.tech9.knopdvmd_4_real.apk",
-        "nome" : "com.tech9.knopdvmd_4_real.apk"
+        "nomeApk" : "com.tech9.knopdvmd_4_real.apk",
+        "nome" : "PDV CAMP"
     },
     {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/CPOS_3.0_49.apk",
-        "nome" : "CPOS_3.0_49.apk"
+        "nomeApk" : "CPOS_3.0_49.apk",
+        "nome" : "CPOS v3.0.49"
     },{
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/DG_Vendar_2.1.apk",
-        "nome" : "DG_Vendar_2.1.apk"
+        "nomeApk" : "DG_Vendar_2.1.apk",
+        "nome" : "DG Vendas v2.1"
     },
     {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/Dragon-c.jpg",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/Dragon_c_5.2.apk",
-        "nome" : "Dragon_c_5.2.apk"
+        "nomeApk" : "Dragon_c_5.2.apk",
+        "nome" : "Dragon C v5.2"
     },{
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/Flash-score-logo.png",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/eu.livesport.FlashScore_com_v3.13.4.apk",
-        "nome" : "eu.livesport.FlashScore_com_v3.13.4.apk"
+        "nomeApk" : "eu.livesport.FlashScore_com_v3.13.4.apk",
+        "nome" : "Flash Score v3.13.4"
     },
     {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/Fbet.jpg",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/Fbet_2.5.0.apk",
-        "nome" : "Fbet_2.5.0.apk"
+        "nomeApk" : "Fbet_2.5.0.apk",
+        "nome" : "Fbet v2.5.0"
     },{
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/Fbet-2.jpg",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/FBET+_1.5.3.apk",
-        "nome" : "FBET+_1.5.3.apk"
+        "nomeApk" : "FBET+_1.5.3.apk",
+        "nome" : "FBET+ v1.5.3"
     },
     {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/Flash-score-logo.png",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/FlashScore_4.1.3.apk",
-        "nome" : "FlashScore_4.1.3.apk"
+        "nomeApk" : "FlashScore_4.1.3.apk",
+        "nome" : "FlashScore v4.1.3"
     },{
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/Goldaviradabet_1.0.0.apk",
-        "nome" : "Goldaviradabet_1.0.0.apk"
+        "nomeApk" : "Goldaviradabet_1.0.0.apk",
+        "nome" : "Gol da virada bet v1.0.0"
     },
     {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/Impressao_bet_loteria_1.0.apk",
-        "nome" : "Impressao_bet_loteria_1.0.apk"
+        "nomeApk" : "Impressao_bet_loteria_1.0.apk",
+        "nome" : "Impressao bet loteria v1.0"
     },{
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/JBet.jpg",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/JBet_1.0.0_Vitor.apk",
-        "nome" : "JBet_1.0.0_Vitor.apk"
+        "nomeApk" : "JBet_1.0.0_Vitor.apk",
+        "nome" : "JBet v1.0.0"
     },
     {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/Le.jpg",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/LE_7.04.064.apk",
-        "nome" : "LE_7.04.064.apk"
+        "nomeApk" : "LE_7.04.064.apk",
+        "nome" : "LE v7.04.064"
     },{
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/Painel_Cortina_1.4.0.apk",
-        "nome" : "Painel_Cortina_1.4.0.apk"
+        "nomeApk" : "Painel_Cortina_1.4.0.apk",
+        "nome" : "Painel Cortina V1.4.0"
     },
     {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/bOLA",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/PalpiteOn (1).apk",
-        "nome" : "PalpiteOn (1).apk"
+        "nomeApk" : "PalpiteOn.apk",
+        "nome" : "PalpiteOn"
     },{
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/MAQUINETA",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/Pos_5.2_signed.apk",
-        "nome" : "Pos_5.2_signed.apk"
+        "nomeApk" : "Pos_5.2_signed.apk",
+        "nome" : "Pos signed v5.2"
     },
     {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/maquineta",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/Pos_5.2.apk",
-        "nome" : "Pos_5.2.apk"
+        "nomeApk" : "Pos_5.2.apk",
+        "nome" : "Pos v5.2"
     },{
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/Posweb23.apk",
-        "nome" : "Posweb23.apk"
+        "nomeApk" : "Posweb23.apk",
+        "nome" : "Posweb v2.3"
     },
     {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/Real-da-sorte.jpg",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/real_da_sorte (1).apk",
-        "nome" : "real_da_sorte (1).apk"
+        "nomeApk" : "real_da_sorte.apk",
+        "nome" : "real da sorte"
     },{
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/SA.jpg",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/SA_Esportes_4.6.5.2.apk",
-        "nome" : "SA_Esportes_4.6.5.2.apk"
+        "nomeApk" : "SA_Esportes_4.6.5.2.apk",
+        "nome" : "SA Esportes v4.6.5.2"
     },
     {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/SA.jpg",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/SA_Esportes_4.7.0.3.apk",
-        "nome" : "SA_Esportes_4.7.0.3.apk"
+        "nomeApk" : "SA_Esportes_4.7.0.3.apk",
+        "nome" : "SA Esportes v4.7.0.3"
     },{
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/SA.jpg",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/SA_Esportes.apk",
-        "nome" : "SA_Esportes.apk"
+        "nomeApk" : "SA_Esportes.apk",
+        "nome" : "SA Esportes"
     },
     {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/SeteBit.jpg",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/SeteBitt_2.1_jb.apk",
-        "nome" : "SeteBitt_2.1_jb.apk"
+        "nomeApk" : "SeteBitt_2.1_jb.apk",
+        "nome" : "SeteBitt v2.1"
     },{
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/sp-pdvmd-1.0.6 (1).apk",
-        "nome" : "sp-pdvmd-1.0.6 (1).apk"
+        "nomeApk" : "sp-pdvmd-1.0.6.apk",
+        "nome" : "PVD CAMP sp-pdvmd-1.0.6"
     },
     {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/Wpp-business.jpeg",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/WhatsApp.apk",
-        "nome" : "WhatsApp.apk"
-    },{
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
-        "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/Wsb_3.34.apk",
-        "nome" : "Wsb_3.34.apk"
+        "nomeApk" : "WhatsApp.apk",
+        "nome" : "WhatsApp Business"
     },
     {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/",
+        "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/Wsb_3.34.apk",
+        "nomeApk" : "Wsb_3.34.apk",
+        "nome" : "Wsb_3.34.apk Não esta pegando"
+    },
+    {
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/X6-Sports.jpg",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/Xsa_Sports_1.2.0.apk",
-        "nome" : "Xsa_Sports_1.2.0.apk"
+        "nomeApk" : "Xsa_Sports_1.2.0.apk",
+        "nome" : "Xsa Sports v1.2.0"
     }
 ]

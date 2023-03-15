@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     dados.forEach((dadosApk) {
       Aplicativo aplicativo =
-          Aplicativo(dadosApk['logo'], dadosApk['apk'], dadosApk['nome']);
+          Aplicativo(dadosApk['logo'], dadosApk['apk'], dadosApk['nome'], dadosApk['nomeApk']);
       aplicativos.add(aplicativo);
     });
 
@@ -68,10 +68,8 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               itemCount: snapshot.data.length,
               itemBuilder: (context, indice) {
-                return Aplicativo(
-                    snapshot.data[indice].logo,
-                    snapshot.data[indice].apk,
-                    'snapshot.data[indice].nome.apk');
+                return Aplicativo(snapshot.data[indice].logo,
+                    snapshot.data[indice].apk, snapshot.data[indice].nome, snapshot.data[indice].nomeApk);
               },
             );
           },
@@ -83,7 +81,8 @@ class Aplicativo extends StatefulWidget {
   final logo;
   final apk;
   final nome;
-  const Aplicativo(this.logo, this.apk, this.nome);
+  final nomeApk;
+  const Aplicativo(this.logo, this.apk, this.nome, this.nomeApk);
 
   @override
   State<Aplicativo> createState() => _AplicativoState();
@@ -122,9 +121,7 @@ class _AplicativoState extends State<Aplicativo> {
       child: Column(children: [
         InkWell(
           onTap: () {
-            downloadFile(
-                'https://raw.githubusercontent.com/MateuzDuart/grupoMxrApp/master/apks/Acesso_PDV_4.0.4.apk',
-                widget.nome);
+            downloadFile(widget.apk, widget.nomeApk);
           }, // Handle your callback
           child: Ink(
               height: 200,
