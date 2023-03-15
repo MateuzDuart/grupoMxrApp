@@ -5,7 +5,6 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
 import 'package:open_file/open_file.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,8 +39,8 @@ class _MyHomePageState extends State<MyHomePage> {
     List aplicativos = [];
 
     dados.forEach((dadosApk) {
-      Aplicativo aplicativo = Aplicativo(dadosApk['logo'], dadosApk['apk'],
-          dadosApk['nome'], dadosApk['nomeApk']);
+      Aplicativo aplicativo =
+          Aplicativo(dadosApk['logo'], dadosApk['apk'], dadosApk['nome'], dadosApk['nomeApk']);
       aplicativos.add(aplicativo);
     });
 
@@ -69,11 +68,8 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               itemCount: snapshot.data.length,
               itemBuilder: (context, indice) {
-                return Aplicativo(
-                    snapshot.data[indice].logo,
-                    snapshot.data[indice].apk,
-                    snapshot.data[indice].nome,
-                    snapshot.data[indice].nomeApk);
+                return Aplicativo(snapshot.data[indice].logo,
+                    snapshot.data[indice].apk, snapshot.data[indice].nome, snapshot.data[indice].nomeApk);
               },
             );
           },
@@ -93,26 +89,31 @@ class Aplicativo extends StatefulWidget {
 }
 
 class _AplicativoState extends State<Aplicativo> {
-  
-  Future<void> downloadFile(String url, String fileName) async {
-  final status = await Permission.storage.request();
-  if (status != PermissionStatus.granted) {
-    throw Exception('Permissão de armazenamento negada');
+  Future downloadFile(String url, String fileName) async {
+    var response = await http.get(Uri.parse(url));
+    var totalBytes = response.contentLength;
+    final tamanho = totalBytes! / 1000 / 1000;
+    final bytesReceived = StreamController();
+    var dir = await getExternalStorageDirectory();
+    File file = File("/storage/emulated/0/Download/$fileName");
+    await file.writeAsBytes(response.bodyBytes);
+    await OpenFile.open("/storage/emulated/0/Download/$fileName");
+    final request = http.Request('GET', Uri.parse(url));
+    final streamedResponse = await request.send();
+
+    await streamedResponse.stream.map((chunk) {
+      bytesReceived.add(chunk.length);
+      return chunk;
+    }).pipe(file.openWrite());
+    var recebidos = 0;
+    bytesReceived.stream.listen((bytes) {
+      recebidos += bytes as int;
+      final progress = (recebidos / totalBytes) * 100;
+      print('Download progress: $progress%');
+    });
+
+    // return file;
   }
-
-  final dir = await getExternalStorageDirectory();
-  final filePath = '${dir!.path}/$fileName';
-
-  final response = await http.get(Uri.parse(url));
-  final totalBytes = response.contentLength;
-  final fileSizeInMB = totalBytes! / (1000 * 1000); 
-
-  final file = File(filePath);
-  await file.writeAsBytes(response.bodyBytes);
-
-  await OpenFile.open(filePath);
-}
-
 
   @override
   Widget build(BuildContext context) {
