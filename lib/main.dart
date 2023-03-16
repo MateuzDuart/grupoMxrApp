@@ -5,6 +5,8 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
 import 'package:open_file/open_file.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:device_apps/device_apps.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,7 +32,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  // ignore: non_constant_identifier_names
   Future<List> PegarApks() async {
+    final status = await Permission.accessMediaLocation.request();
     final Uri uri = Uri.parse(
         'https://raw.githubusercontent.com/MateuzDuart/grupoMxrApp/master/dados.json');
     final resposta = await http.get(uri);
@@ -39,8 +43,9 @@ class _MyHomePageState extends State<MyHomePage> {
     List aplicativos = [];
 
     dados.forEach((dadosApk) {
-      Aplicativo aplicativo =
-          Aplicativo(dadosApk['logo'], dadosApk['apk'], dadosApk['nome'], dadosApk['nomeApk']);
+      Status();
+      Aplicativo aplicativo = Aplicativo(dadosApk['logo'], dadosApk['apk'],
+          dadosApk['nome'], dadosApk['nomeApk']);
       aplicativos.add(aplicativo);
     });
 
@@ -68,13 +73,20 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               itemCount: snapshot.data.length,
               itemBuilder: (context, indice) {
-                return Aplicativo(snapshot.data[indice].logo,
-                    snapshot.data[indice].apk, snapshot.data[indice].nome, snapshot.data[indice].nomeApk);
+                return Aplicativo(
+                    snapshot.data[indice].logo,
+                    snapshot.data[indice].apk,
+                    snapshot.data[indice].nome,
+                    snapshot.data[indice].nomeApk);
               },
             );
           },
         ));
   }
+}
+
+class Status {
+  Map Aplicativos = {};
 }
 
 class Aplicativo extends StatefulWidget {
@@ -89,30 +101,34 @@ class Aplicativo extends StatefulWidget {
 }
 
 class _AplicativoState extends State<Aplicativo> {
-  Future downloadFile(String url, String fileName) async {
-    var response = await http.get(Uri.parse(url));
-    var totalBytes = response.contentLength;
-    final tamanho = totalBytes! / 1000 / 1000;
-    final bytesReceived = StreamController();
-    var dir = await getExternalStorageDirectory();
-    File file = File("/storage/emulated/0/Download/$fileName");
+  Future<void> downloadFile(String url, String fileName) async {
+    final status = await Permission.storage.request();
+    if (status != PermissionStatus.granted) {
+      throw Exception('Permissão de armazenamento negada');
+    }
+    ;
+    final dir = await getExternalStorageDirectory();
+    final filePath = '${dir!.path}/$fileName';
+
+    final response = await http.get(Uri.parse(url));
+    final totalBytes = response.contentLength;
+    final fileSizeInMB = totalBytes! / (1000 * 1000);
+
+    final file = File(filePath);
     await file.writeAsBytes(response.bodyBytes);
-    await OpenFile.open("/storage/emulated/0/Download/$fileName");
-    final request = http.Request('GET', Uri.parse(url));
-    final streamedResponse = await request.send();
+    await OpenFile.open(filePath);
+  }
 
-    await streamedResponse.stream.map((chunk) {
-      bytesReceived.add(chunk.length);
-      return chunk;
-    }).pipe(file.openWrite());
-    var recebidos = 0;
-    bytesReceived.stream.listen((bytes) {
-      recebidos += bytes as int;
-      final progress = (recebidos / totalBytes) * 100;
-      print('Download progress: $progress%');
+  Future<void> getInstalledApps() async {
+    List<Application> apps = await DeviceApps.getInstalledApplications();
+    apps.forEach((e) {
+      print("${e.appName} ${widget.nome}");
+      if (widget.nome
+          .toString()
+          .toLowerCase()
+          .contains(e.appName.toString().toLowerCase())) {}
+      ;
     });
-
-    // return file;
   }
 
   @override
@@ -121,16 +137,34 @@ class _AplicativoState extends State<Aplicativo> {
       child: Column(children: [
         InkWell(
           onTap: () {
+            setState(() {
+              getInstalledApps();
+            });
             downloadFile(widget.apk, widget.nomeApk);
-          }, // Handle your callback
+          },
           child: Ink(
-              height: 200,
-              width: MediaQuery.of(context).size.width * 0.6,
+            height: 200,
+            width: MediaQuery.of(context).size.width * 0.6,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(100.0),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(100.0),
+                child: Image.network(widget.logo,
+                    fit: BoxFit.cover,
+                    width: 50,
+                    height: 50,
+                    errorBuilder: (BuildContext context, Object exception,
+                            StackTrace? stackTrace) =>
+                        Text('Erro ao Carregar Imagem')),
+              ),
+            ),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.0),
               color: Colors.red,
-              child: Image.network(widget.logo,
-                  errorBuilder: (BuildContext context, Object exception,
-                          StackTrace? stackTrace) =>
-                      Text('Erro ao Carregar Imagem'))),
+            ),
+          ),
         ),
         Padding(
           padding: EdgeInsets.only(top: 8),

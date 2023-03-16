@@ -1,6 +1,6 @@
 {
-    "name": "grupomxr",
-    "short_name": "grupomxr",
+    "name": "mxr",
+    "short_name": "mxr",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

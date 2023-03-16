@@ -1,7 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.grupomxr">
-   <application
-        android:label="grupomxr"
+    package="com.example.mxr">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+    
+    <application
+        android:label="mxr"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
