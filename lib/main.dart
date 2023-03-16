@@ -7,9 +7,28 @@ import 'dart:convert';
 import 'package:open_file/open_file.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:device_apps/device_apps.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => AppProvider()),
+      ],
+      child: const MyApp(),
+    ),
+  );
+}
+
+class AppProvider extends ChangeNotifier {
+  List _apps = [];
+
+  List get apps => _apps;
+
+  void increment(app) {
+    _apps.add(app);
+    notifyListeners();
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -43,7 +62,6 @@ class _MyHomePageState extends State<MyHomePage> {
     List aplicativos = [];
 
     dados.forEach((dadosApk) {
-      Status();
       Aplicativo aplicativo = Aplicativo(dadosApk['logo'], dadosApk['apk'],
           dadosApk['nome'], dadosApk['nomeApk']);
       aplicativos.add(aplicativo);
@@ -85,10 +103,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class Status {
-  Map Aplicativos = {};
-}
-
 class Aplicativo extends StatefulWidget {
   final logo;
   final apk;
@@ -108,8 +122,8 @@ class _AplicativoState extends State<Aplicativo> {
     }
     ;
     final dir = await getExternalStorageDirectory();
-    final filePath = '${dir!.path}/$fileName';
-
+    final filePath = '/storage/emulated/0/Download/$fileName';
+    print(filePath);
     final response = await http.get(Uri.parse(url));
     final totalBytes = response.contentLength;
     final fileSizeInMB = totalBytes! / (1000 * 1000);
