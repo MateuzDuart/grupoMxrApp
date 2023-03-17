@@ -48,6 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
       context
           .read<AppProvider>()
           .increment(dadosApk['nome'], dadosApk['nomeInstalado']);
+
       Aplicativo aplicativo = Aplicativo(dadosApk['logo'], dadosApk['apk'],
           dadosApk['nome'], dadosApk['nomeApk'], dadosApk['nomeInstalado']);
       aplicativos.add(aplicativo);

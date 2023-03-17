@@ -6,15 +6,13 @@ class AppProvider extends ChangeNotifier {
   List appInstalados = [];
   Map get apps => _apps;
 
-  increment(nome, nomeInstalado) {
-    getInstalledApps(nome, nomeInstalado);
-    print(_apps);
-    _apps[nome] = {"cor": Colors.red, "instalado": false};
-
+  increment(nome, nomeInstalado) async {
+    var cor = await getInstalledApps(nome, nomeInstalado);
+    _apps[nome] = {"cor": cor, "instalado": true};
     notifyListeners();
   }
 
-  Future<void> getInstalledApps(nome, nomeInstalado) async {
+  Future getInstalledApps(nome, nomeInstalado) async {
     List<Application> apps = await DeviceApps.getInstalledApplications();
     if (apps.length != appInstalados.length) {
       apps.forEach((e) {
@@ -27,9 +25,9 @@ class AppProvider extends ChangeNotifier {
     print(
         "aqui caraio: ${appInstalados.contains(nomeInstalado.toString().toLowerCase())} ${nomeInstalado}");
     if (appInstalados.contains(nomeInstalado.toString().toLowerCase())) {
-      _apps[nome] = {"cor": Colors.green, "instalado": true};
+      return Colors.green;
     } else {
-      _apps[nome] = {"cor": Colors.red, "instalado": false};
+      return Colors.red;
     }
   }
 }
