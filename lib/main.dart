@@ -139,14 +139,7 @@ class _AplicativoState extends State<Aplicativo> {
             width: 50,
             height: 50,
           ),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: Text('Fechar'),
-            ),
-          ],
+          actions: [],
         );
       },
     );

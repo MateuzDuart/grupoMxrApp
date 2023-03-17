@@ -7,12 +7,9 @@ class AppProvider extends ChangeNotifier {
   Map get apps => _apps;
 
   increment(nome, nomeInstalado) {
-   getInstalledApps(nome, nomeInstalado);
+    getInstalledApps(nome, nomeInstalado);
     print(_apps);
-    _apps[nome] = {
-      "cor": Colors.red,
-      "instalado": false
-    };
+    _apps[nome] = {"cor": Colors.red, "instalado": false};
 
     notifyListeners();
   }
@@ -21,7 +18,9 @@ class AppProvider extends ChangeNotifier {
     List<Application> apps = await DeviceApps.getInstalledApplications();
     if (apps.length != appInstalados.length) {
       apps.forEach((e) {
-        appInstalados.add(e.appName.toString().toLowerCase());
+        appInstalados.add(e.appName.toString().toLowerCase().length == 0
+            ? "bet loteria"
+            : e.appName.toString().toLowerCase());
       });
     }
     print(appInstalados);
@@ -30,7 +29,8 @@ class AppProvider extends ChangeNotifier {
     if (appInstalados.contains(nomeInstalado.toString().toLowerCase())) {
       _apps[nome] = {"cor": Colors.green, "instalado": true};
       print(_apps);
+    } else {
+      _apps[nome] = {"cor": Colors.red, "instalado": false};
     }
-    
   }
 }
