@@ -28,7 +28,6 @@ class AppProvider extends ChangeNotifier {
         "aqui caraio: ${appInstalados.contains(nomeInstalado.toString().toLowerCase())} ${nomeInstalado}");
     if (appInstalados.contains(nomeInstalado.toString().toLowerCase())) {
       _apps[nome] = {"cor": Colors.green, "instalado": true};
-      print(_apps);
     } else {
       _apps[nome] = {"cor": Colors.red, "instalado": false};
     }

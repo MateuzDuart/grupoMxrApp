@@ -116,11 +116,17 @@ class _AplicativoState extends State<Aplicativo> {
     if (!context.read<AppProvider>().apps[widget.nome]['instalado']) {
       final dir = await getExternalStorageDirectory();
       final filePath = '${dir!.path}/$fileName';
-      final response = await http.get(Uri.parse(url));
       final file = File(filePath);
-      await file.writeAsBytes(response.bodyBytes);
-      await OpenFile.open(filePath);
-      Navigator.pop(context);
+      var existe = await file.exists();
+      if (existe) {
+        await OpenFile.open(filePath);
+      } else {
+        final response = await http.get(Uri.parse(url));
+        final file = File(filePath);
+        await file.writeAsBytes(response.bodyBytes);
+        await OpenFile.open(filePath);
+        Navigator.pop(context);
+      }
     }
   }
 
