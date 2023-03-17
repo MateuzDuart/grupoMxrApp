@@ -108,6 +108,7 @@ class Aplicativo extends StatefulWidget {
 }
 
 class _AplicativoState extends State<Aplicativo> {
+  int totTentativa = 0;
   Future<void> downloadFile(String url, String fileName) async {
     final status = await Permission.storage.request();
     if (status != PermissionStatus.granted) {
@@ -118,9 +119,10 @@ class _AplicativoState extends State<Aplicativo> {
       final filePath = '${dir!.path}/$fileName';
       final file = File(filePath);
       var existe = await file.exists();
-      if (existe) {
+      if (existe && totTentativa < 1) {
         await OpenFile.open(filePath);
         Navigator.pop(context);
+        totTentativa++;
       } else {
         final response = await http.get(Uri.parse(url));
         final file = File(filePath);
