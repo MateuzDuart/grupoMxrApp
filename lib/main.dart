@@ -6,29 +6,12 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:open_file/open_file.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:device_apps/device_apps.dart';
+import 'package:mxr/state/app.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => AppProvider()),
-      ],
-      child: const MyApp(),
-    ),
-  );
-}
-
-class AppProvider extends ChangeNotifier {
-  List _apps = [];
-
-  List get apps => _apps;
-
-  void increment(app) {
-    _apps.add(app);
-    notifyListeners();
-  }
+  runApp(ChangeNotifierProvider(
+      create: (context) => AppProvider(), child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -62,6 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
     List aplicativos = [];
 
     dados.forEach((dadosApk) {
+      context.read<AppProvider>().increment(dadosApk['nome']);
       Aplicativo aplicativo = Aplicativo(dadosApk['logo'], dadosApk['apk'],
           dadosApk['nome'], dadosApk['nomeApk']);
       aplicativos.add(aplicativo);
@@ -120,77 +104,60 @@ class _AplicativoState extends State<Aplicativo> {
     if (status != PermissionStatus.granted) {
       throw Exception('Permissão de armazenamento negada');
     }
-    ;
-    final dir = await getExternalStorageDirectory();
-    final filePath = '/storage/emulated/0/Download/$fileName';
-    print(filePath);
-    final response = await http.get(Uri.parse(url));
-    final totalBytes = response.contentLength;
-    final fileSizeInMB = totalBytes! / (1000 * 1000);
-
-    final file = File(filePath);
-    await file.writeAsBytes(response.bodyBytes);
-    await OpenFile.open(filePath);
-  }
-
-  Future<void> getInstalledApps() async {
-    List<Application> apps = await DeviceApps.getInstalledApplications();
-    apps.forEach((e) {
-      print("${e.appName} ${widget.nome}");
-      if (widget.nome
-          .toString()
-          .toLowerCase()
-          .contains(e.appName.toString().toLowerCase())) {}
-      ;
-    });
+    if (!context.read<AppProvider>().apps[widget.nome]['instalado']) 
+    {
+      final dir = await getExternalStorageDirectory();
+      final filePath = '${dir!.path}/$fileName';
+      final response = await http.get(Uri.parse(url));
+      final file = File(filePath);
+      await file.writeAsBytes(response.bodyBytes);
+      await OpenFile.open(filePath);}
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(children: [
-        InkWell(
-          onTap: () {
-            setState(() {
-              getInstalledApps();
-            });
-            downloadFile(widget.apk, widget.nomeApk);
-          },
-          child: Ink(
-            height: 200,
-            width: MediaQuery.of(context).size.width * 0.6,
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(100.0),
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(100.0),
-                child: Image.network(widget.logo,
-                    fit: BoxFit.cover,
-                    width: 50,
-                    height: 50,
-                    errorBuilder: (BuildContext context, Object exception,
-                            StackTrace? stackTrace) =>
-                        Text('Erro ao Carregar Imagem')),
-              ),
-            ),
+    return Column(children: [
+      InkWell(
+        onTap: () {
+          setState(() {
+            context.read<AppProvider>().apps[widget.nome]['cor'] = Colors.blue;
+            context.read<AppProvider>().getInstalledApps(widget.nome);
+          });
+        },
+        child: Ink(
+          height: 200,
+          width: MediaQuery.of(context).size.width * 0.6,
+          child: Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.0),
-              color: Colors.red,
+              borderRadius: BorderRadius.circular(100.0),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(100.0),
+              child: Image.network(widget.logo,
+                  fit: BoxFit.cover,
+                  width: 50,
+                  height: 50,
+                  errorBuilder: (BuildContext context, Object exception,
+                          StackTrace? stackTrace) =>
+                      Text('Erro ao Carregar Imagem')),
             ),
           ),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10.0),
+            color: context.read<AppProvider>().apps[widget.nome]['cor'],
+          ),
         ),
-        Padding(
-          padding: EdgeInsets.only(top: 8),
-        ),
-        Text(
-          widget.nome,
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
-        ),
-        Padding(
-          padding: EdgeInsets.only(bottom: 40),
-        ),
-      ]),
-    );
+      ),
+      Padding(
+        padding: EdgeInsets.only(top: 8),
+      ),
+      Text(
+        widget.nome,
+        style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+      ),
+      Padding(
+        padding: EdgeInsets.only(bottom: 40),
+      ),
+    ]);
   }
 }
