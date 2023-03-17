@@ -45,9 +45,9 @@ class _MyHomePageState extends State<MyHomePage> {
     List aplicativos = [];
 
     dados.forEach((dadosApk) {
-      context.read<AppProvider>().increment(dadosApk['nome']);
+      context.read<AppProvider>().increment(dadosApk['nome'], dadosApk['nomeInstalado']);
       Aplicativo aplicativo = Aplicativo(dadosApk['logo'], dadosApk['apk'],
-          dadosApk['nome'], dadosApk['nomeApk']);
+          dadosApk['nome'], dadosApk['nomeApk'], dadosApk['nomeInstalado']);
       aplicativos.add(aplicativo);
     });
 
@@ -79,7 +79,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     snapshot.data[indice].logo,
                     snapshot.data[indice].apk,
                     snapshot.data[indice].nome,
-                    snapshot.data[indice].nomeApk);
+                    snapshot.data[indice].nomeApk,
+                    snapshot.data[indice].nomeInstalado);
               },
             );
           },
@@ -92,7 +93,9 @@ class Aplicativo extends StatefulWidget {
   final apk;
   final nome;
   final nomeApk;
-  const Aplicativo(this.logo, this.apk, this.nome, this.nomeApk);
+  final nomeInstalado;
+  const Aplicativo(
+      this.logo, this.apk, this.nome, this.nomeApk, this.nomeInstalado);
 
   @override
   State<Aplicativo> createState() => _AplicativoState();
@@ -104,14 +107,14 @@ class _AplicativoState extends State<Aplicativo> {
     if (status != PermissionStatus.granted) {
       throw Exception('Permissão de armazenamento negada');
     }
-    if (!context.read<AppProvider>().apps[widget.nome]['instalado']) 
-    {
+    if (!context.read<AppProvider>().apps[widget.nome]['instalado']) {
       final dir = await getExternalStorageDirectory();
       final filePath = '${dir!.path}/$fileName';
       final response = await http.get(Uri.parse(url));
       final file = File(filePath);
       await file.writeAsBytes(response.bodyBytes);
-      await OpenFile.open(filePath);}
+      await OpenFile.open(filePath);
+    }
   }
 
   @override
@@ -122,6 +125,7 @@ class _AplicativoState extends State<Aplicativo> {
           setState(() {
             context.read<AppProvider>().apps[widget.nome]['cor'] = Colors.blue;
             context.read<AppProvider>().getInstalledApps(widget.nome);
+            downloadFile(widget.apk, widget.nome);
           });
         },
         child: Ink(

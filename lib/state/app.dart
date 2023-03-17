@@ -6,10 +6,10 @@ class AppProvider extends ChangeNotifier {
   List appInstalados = [];
   Map get apps => _apps;
 
-  void increment(nome) {
+  void increment(nome, nomeInstalado) {
     _apps[nome] = {"cor": Colors.red, "instalado": false};
     notifyListeners();
-    getInstalledApps(nome);
+    getInstalledApps(nomeInstalado);
   }
 
   Future<void> getInstalledApps(nome) async {
@@ -20,15 +20,17 @@ class AppProvider extends ChangeNotifier {
       });
     }
 
-    apps.forEach((e) {
-      print("${e.appName} ${nome}");
-      if (nome
-          .toString()
-          .toLowerCase()
-          .contains(e.appName.toString().toLowerCase())) {
-        _apps[nome] = {"cor": Colors.green, "instalado": true};
-      }
-      ;
-    });
+    print("aqui caraio: ${appInstalados.contains(nome)} ${nome}");
+
+    // apps.forEach((e) {
+    //   print("${e.appName} ${nome}");
+    //   if (nome
+    //       .toString()
+    //       .toLowerCase()
+    //       .contains(e.appName.toString().toLowerCase())) {
+    //     _apps[nome] = {"cor": Colors.green, "instalado": true};
+    //   }
+    //   ;
+    // });
   }
 }
