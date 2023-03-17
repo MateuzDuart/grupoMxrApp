@@ -45,7 +45,9 @@ class _MyHomePageState extends State<MyHomePage> {
     List aplicativos = [];
 
     dados.forEach((dadosApk) {
-      context.read<AppProvider>().increment(dadosApk['nome'], dadosApk['nomeInstalado']);
+      context
+          .read<AppProvider>()
+          .increment(dadosApk['nome'], dadosApk['nomeInstalado']);
       Aplicativo aplicativo = Aplicativo(dadosApk['logo'], dadosApk['apk'],
           dadosApk['nome'], dadosApk['nomeApk'], dadosApk['nomeInstalado']);
       aplicativos.add(aplicativo);
@@ -69,7 +71,11 @@ class _MyHomePageState extends State<MyHomePage> {
               return Text('Carregando...');
             } else {}
 
-            return ListView.builder(
+            return GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                mainAxisSpacing: 56.0,
+              ),
               padding: EdgeInsets.only(
                 top: 32,
               ),
@@ -114,7 +120,36 @@ class _AplicativoState extends State<Aplicativo> {
       final file = File(filePath);
       await file.writeAsBytes(response.bodyBytes);
       await OpenFile.open(filePath);
+      Navigator.pop(context);
     }
+  }
+
+  void _showPopup(
+    BuildContext context,
+  ) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Baixando ${widget.nome}'),
+          content: Container(
+            child: CircularProgressIndicator(
+              color: Colors.black54,
+            ),
+            width: 50,
+            height: 50,
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Fechar'),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -123,14 +158,40 @@ class _AplicativoState extends State<Aplicativo> {
       InkWell(
         onTap: () {
           setState(() {
-            context.read<AppProvider>().apps[widget.nome]['cor'] = Colors.blue;
-            context.read<AppProvider>().getInstalledApps(widget.nome);
-            downloadFile(widget.apk, widget.nome);
+            if (!context.read<AppProvider>().apps[widget.nome]['instalado']) {
+              context.read<AppProvider>().apps[widget.nome]['cor'] =
+                  Colors.blue;
+              _showPopup(context);
+
+              downloadFile(widget.apk, widget.nome);
+            } else {
+              context.read<AppProvider>().apps[widget.nome]['cor'] =
+                  Colors.green;
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: Text('${widget.nome} já Baixando'),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('Fechar'),
+                      ),
+                    ],
+                  );
+                },
+              );
+            }
+            context
+                .read<AppProvider>()
+                .getInstalledApps(widget.nome, widget.nomeInstalado);
           });
         },
         child: Ink(
-          height: 200,
-          width: MediaQuery.of(context).size.width * 0.6,
+          height: MediaQuery.of(context).size.width * 0.25,
+          width: MediaQuery.of(context).size.width * 0.25,
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(100.0),
@@ -157,10 +218,8 @@ class _AplicativoState extends State<Aplicativo> {
       ),
       Text(
         widget.nome,
-        style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
-      ),
-      Padding(
-        padding: EdgeInsets.only(bottom: 40),
+        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+        textAlign: TextAlign.center,
       ),
     ]);
   }
