@@ -120,6 +120,7 @@ class _AplicativoState extends State<Aplicativo> {
       var existe = await file.exists();
       if (existe) {
         await OpenFile.open(filePath);
+        Navigator.pop(context);
       } else {
         final response = await http.get(Uri.parse(url));
         final file = File(filePath);
