@@ -1,6 +1,12 @@
 [
     {
         "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/SA.jpg",
+        "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/SA_Esportes.apk",
+        "nomeApk" : "SA_Esportes.apk",
+        "nomeInstalado": "sa esportess",
+        "nome" : "SA Esportes"
+    },{
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/SA.jpg",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/SA_Esportes_4.6.5.2.apk",
         "nomeApk" : "SA_Esportes_4.6.5.2.apk",
         "nomeInstalado": "sa esportess",
@@ -202,12 +208,6 @@
         "nomeApk" : "real_da_sorte.apk",
         "nomeInstalado": "realdasorte",
         "nome" : "real da sorte"
-    },{
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/SA.jpg",
-        "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/SA_Esportes.apk",
-        "nomeApk" : "SA_Esportes.apk",
-        "nomeInstalado": "sa esportess",
-        "nome" : "SA Esportes"
     },
     {
         "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/SeteBit.jpg",
