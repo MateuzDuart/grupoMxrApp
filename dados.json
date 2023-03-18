@@ -1,5 +1,43 @@
 [
     {
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/SA.jpg",
+        "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/SA_Esportes_4.6.5.2.apk",
+        "nomeApk" : "SA_Esportes_4.6.5.2.apk",
+        "nomeInstalado": "sa esportess",
+        "nome" : "SA Esportes v4.6.5.2"
+    },
+    {
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/SA.jpg",
+        "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/SA_Esportes_4.7.0.3.apk",
+        "nomeApk" : "SA_Esportes_4.7.0.3.apk",
+        "nomeInstalado": "sa esportess",
+        "nome" : "SA Esportes v4.7.0.3"
+    },{
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/Le.jpg",
+        "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/LE_7.04.064.apk",
+        "nomeApk" : "LE_7.04.064.apk",
+        "nomeInstalado": "le",
+        "nome" : "LE v7.04.064"
+    },{
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/Wpp-business.jpeg",
+        "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/WhatsApp.apk",
+        "nomeApk" : "WhatsApp.apk",
+        "nomeInstalado": "whatsapp business",
+        "nome" : "WhatsApp Business"
+    },{
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/Flash-score-logo.png",
+        "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/eu.livesport.FlashScore_com_v3.13.4.apk",
+        "nomeApk" : "eu.livesport.FlashScore_com_v3.13.4.apk",
+        "nomeInstalado": "flashscore",
+        "nome" : "Flash Score v3.13.4"
+    },
+{
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/Flash-score-logo.png",
+        "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/FlashScore_4.1.3.apk",
+        "nomeApk" : "FlashScore_4.1.3.apk",
+        "nomeInstalado": "flashscore",
+        "nome" : "FlashScore v4.1.3"
+    },{
         "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/Acesso-PDV.jpg",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/Acesso_PDV_4.0.4.apk",
         "nomeApk" : "Acesso_PDV_4.0.4.apk",
@@ -91,12 +129,6 @@
         "nomeApk" : "Dragon_c_5.2.apk",
         "nomeInstalado": "dragon c",
         "nome" : "Dragon C v5.2"
-    },{
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/Flash-score-logo.png",
-        "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/eu.livesport.FlashScore_com_v3.13.4.apk",
-        "nomeApk" : "eu.livesport.FlashScore_com_v3.13.4.apk",
-        "nomeInstalado": "flashscore",
-        "nome" : "Flash Score v3.13.4"
     },
     {
         "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/Fbet.jpg",
@@ -112,12 +144,6 @@
         "nome" : "FBET+ v1.5.3"
     },
     {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/Flash-score-logo.png",
-        "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/FlashScore_4.1.3.apk",
-        "nomeApk" : "FlashScore_4.1.3.apk",
-        "nomeInstalado": "flashscore",
-        "nome" : "FlashScore v4.1.3"
-    },{
         "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/gol-da-virada.jpg",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/Goldaviradabet_1.0.0.apk",
         "nomeApk" : "Goldaviradabet_1.0.0.apk",
@@ -137,13 +163,7 @@
         "nomeInstalado": "jbet",
         "nome" : "JBet v1.0.0"
     },
-    {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/Le.jpg",
-        "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/LE_7.04.064.apk",
-        "nomeApk" : "LE_7.04.064.apk",
-        "nomeInstalado": "le",
-        "nome" : "LE v7.04.064"
-    },{
+  {
         "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/cortina.jpg",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/Painel_Cortina_1.4.0.apk",
         "nomeApk" : "Painel_Cortina_1.4.0.apk",
@@ -184,19 +204,6 @@
         "nome" : "real da sorte"
     },{
         "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/SA.jpg",
-        "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/SA_Esportes_4.6.5.2.apk",
-        "nomeApk" : "SA_Esportes_4.6.5.2.apk",
-        "nomeInstalado": "sa esportess",
-        "nome" : "SA Esportes v4.6.5.2"
-    },
-    {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/SA.jpg",
-        "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/SA_Esportes_4.7.0.3.apk",
-        "nomeApk" : "SA_Esportes_4.7.0.3.apk",
-        "nomeInstalado": "sa esportess",
-        "nome" : "SA Esportes v4.7.0.3"
-    },{
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/SA.jpg",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/SA_Esportes.apk",
         "nomeApk" : "SA_Esportes.apk",
         "nomeInstalado": "sa esportess",
@@ -207,7 +214,7 @@
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/SeteBitt_2.1_jb.apk",
         "nomeApk" : "SeteBitt_2.1_jb.apk",
         "nomeInstalado": "setebit",
-        "nome" : "SeteBitt v2.1"
+        "nome" : "SeteBit v2.1"
     },{
         "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/pdv.jpg",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/sp-pdvmd-1.0.6 (1).apk",
@@ -215,13 +222,7 @@
         "nomeInstalado": "pdv camp",
         "nome" : "PDV CAMP sp-pdvmd-1.0.6"
     },
-    {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/Wpp-business.jpeg",
-        "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/WhatsApp.apk",
-        "nomeApk" : "WhatsApp.apk",
-        "nomeInstalado": "whatsapp business",
-        "nome" : "WhatsApp Business"
-    },
+    
     {
         "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/Wsb_3.34.apk",
