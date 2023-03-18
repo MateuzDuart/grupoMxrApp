@@ -117,7 +117,7 @@
         "nome" : "PDV CAMP"
     },
     {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/pos.jpg",
+        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/cpos.jpg",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/CPOS_3.0_49.apk",
         "nomeApk" : "CPOS_3.0_49.apk",
         "nomeInstalado": "cpos",

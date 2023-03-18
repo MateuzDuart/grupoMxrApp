@@ -14,24 +14,24 @@ class AppProvider extends ChangeNotifier {
 
   Future getInstalledApps(nome, nomeInstalado) async {
     List<Application> apps = await DeviceApps.getInstalledApplications();
-    
-      for (var e in apps) {
-        String nomeAppInstalado = e.appName.toString().toLowerCase();
-        if (nomeAppInstalado.length == 0) {
-          nomeAppInstalado = "bet loteria";
-        } else {
-          if (nomeAppInstalado.contains('whatsapp')) {
-            nomeAppInstalado = 'whatsapp';
-          }
+
+    for (var e in apps) {
+      String nomeAppInstalado = e.appName.toString().toLowerCase();
+      if (nomeAppInstalado.length == 0) {
+        nomeAppInstalado = "bet loteria";
+      } else {
+        if (nomeAppInstalado.contains('whatsapp')) {
+          nomeAppInstalado = 'whatsapp';
         }
-        appInstalados.add(nomeAppInstalado);
       }
-    
-    // print(appInstalados);
-    // print(
-    //     "aqui caraio: ${appInstalados.contains(nomeInstalado.toString().toLowerCase())} ${nomeInstalado}");
+      appInstalados.add(nomeAppInstalado);
+    }
+
+    print(appInstalados);
+    print(
+        "aqui caraio: ${appInstalados.contains(nomeInstalado.toString().toLowerCase())} ${nomeInstalado}");
     if (appInstalados.contains(nomeInstalado.toString().toLowerCase())) {
-        _apps[nome] = {"cor": Colors.green, "instalado": true};
-    } 
+      _apps[nome] = {"cor": Colors.green, "instalado": true};
+    }
   }
 }
