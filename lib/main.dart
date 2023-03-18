@@ -158,7 +158,7 @@ class _AplicativoState extends State<Aplicativo> {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      InkWell(
+      InkWell(  
         onTap: () {
           setState(() {
             if (!context.read<AppProvider>().apps[widget.nome]['instalado']) {
