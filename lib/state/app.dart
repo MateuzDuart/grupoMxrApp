@@ -15,11 +15,17 @@ class AppProvider extends ChangeNotifier {
   Future getInstalledApps(nome, nomeInstalado) async {
     List<Application> apps = await DeviceApps.getInstalledApplications();
     
-      apps.forEach((e) {
-        appInstalados.add(e.appName.toString().toLowerCase().length == 0
-            ? "bet loteria"
-            : e.appName.toString().toLowerCase());
-      });
+      for (var e in apps) {
+        String nomeAppInstalado = e.appName.toString().toLowerCase();
+        if (nomeAppInstalado.length == 0) {
+          nomeAppInstalado = "bet loteria";
+        } else {
+          if (nomeAppInstalado.contains('whatsapp')) {
+            nomeAppInstalado = 'whatsapp';
+          }
+        }
+        appInstalados.add(nomeAppInstalado);
+      }
     
     // print(appInstalados);
     // print(
