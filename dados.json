@@ -1,19 +1,6 @@
 [
     {
         "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/SA.jpg",
-        "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/SA_Esportes.apk",
-        "nomeApk" : "SA_Esportes.apk",
-        "nomeInstalado": "sa esportess",
-        "nome" : "SA Esportes"
-    },{
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/SA.jpg",
-        "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/SA_Esportes_4.6.5.2.apk",
-        "nomeApk" : "SA_Esportes_4.6.5.2.apk",
-        "nomeInstalado": "sa esportess",
-        "nome" : "SA Esportes v4.6.5.2"
-    },
-    {
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/SA.jpg",
         "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/SA_Esportes_4.7.0.3.apk",
         "nomeApk" : "SA_Esportes_4.7.0.3.apk",
         "nomeInstalado": "sa esportess",
@@ -30,12 +17,6 @@
         "nomeApk" : "WhatsApp.apk",
         "nomeInstalado": "whatsapp",
         "nome" : "WhatsApp Business"
-    },{
-        "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/Flash-score-logo.png",
-        "apk": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/apks/eu.livesport.FlashScore_com_v3.13.4.apk",
-        "nomeApk" : "eu.livesport.FlashScore_com_v3.13.4.apk",
-        "nomeInstalado": "flashscore",
-        "nome" : "Flash Score v3.13.4"
     },
 {
         "logo": "https://github.com/MateuzDuart/grupoMxrApp/raw/master/Imagens/Flash-score-logo.png",
