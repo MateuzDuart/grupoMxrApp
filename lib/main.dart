@@ -117,7 +117,8 @@ class _AplicativoState extends State<Aplicativo> {
     }
     if (!context.read<AppProvider>().apps[widget.nome]['instalado']) {
       final dir = await getExternalStorageDirectory();
-      final filePath = '${dir!.path}/$fileName';
+      final filePath = '${dir!.path}/$fileName.apk';
+      print(filePath);
       final file = File(filePath);
       var existe = await file.exists();
       if (existe && totTentativa < 1) {
@@ -158,7 +159,7 @@ class _AplicativoState extends State<Aplicativo> {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      InkWell(  
+      InkWell(
         onTap: () {
           setState(() {
             if (!context.read<AppProvider>().apps[widget.nome]['instalado']) {
